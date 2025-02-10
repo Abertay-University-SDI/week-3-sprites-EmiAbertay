@@ -6,9 +6,13 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 	input = in;
 
 
-	P.setInput(in);
+	P.setInput(in);	
 
+	E.setWindow(hwnd);
+	E2.setWindow(hwnd);
 
+	BG_1.setWindow(hwnd);
+	BG_1.setInput(in);
 };
 
 Level::~Level()
@@ -27,22 +31,27 @@ void Level::handleInput(float dt)
 
 	P.handleInput(dt);
 
+	BG_1.handleInput(dt);
+	
 }
 
 // Update game objects
 void Level::update(float dt)
 {
 	P.update(dt);
+	E.update(dt);
+	E2.update(dt);
 }
 
 // Render level
 void Level::render()
 {
 	beginDraw();
-
+	window->draw(BG_1);
 	window->draw(testSprite);
 	window->draw(P);
-
+	window->draw(E);
+	window->draw(E2);
 
 	endDraw();
 }

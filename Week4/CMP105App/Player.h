@@ -12,6 +12,7 @@ public:
 
 	void handleInput(float dt);
 	void update(float dt);
+	
 
 	sf::Texture Mushroom;
 

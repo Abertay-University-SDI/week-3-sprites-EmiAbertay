@@ -1,4 +1,5 @@
 #include "Player.h"
+#include <iostream>
 
 
 Player::Player() {
@@ -8,6 +9,8 @@ Player::Player() {
 
 	Mushroom.loadFromFile("gfx/Mushroom.png");
 	setTexture(&Mushroom);
+
+	setSize(sf::Vector2f(100, 100));
 
 	setVelocity(0.f, 0.f);
 
@@ -55,6 +58,7 @@ void Player::handleInput(float dt) {
 }
 
 void Player::update(float dt) {
+
 
 
 	move(velocity);
