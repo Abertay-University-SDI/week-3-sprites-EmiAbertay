@@ -15,5 +15,7 @@ public:
 
 	sf::Texture Goomba;
 	sf::Window* Window;
+
+
 };
 

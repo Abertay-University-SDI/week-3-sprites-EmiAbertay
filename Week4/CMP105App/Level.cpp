@@ -13,7 +13,12 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 
 	BG_1.setWindow(hwnd);
 	BG_1.setInput(in);
-};
+
+	C.setInput(in);
+
+
+	window->setMouseCursorVisible(false);
+}
 
 Level::~Level()
 {
@@ -32,6 +37,8 @@ void Level::handleInput(float dt)
 	P.handleInput(dt);
 
 	BG_1.handleInput(dt);
+
+	C.handleInput(dt);
 	
 }
 
@@ -41,6 +48,8 @@ void Level::update(float dt)
 	P.update(dt);
 	E.update(dt);
 	E2.update(dt);
+
+	C.update(dt);
 }
 
 // Render level
@@ -49,9 +58,13 @@ void Level::render()
 	beginDraw();
 	window->draw(BG_1);
 	window->draw(testSprite);
+
+	window->draw(C);
 	window->draw(P);
 	window->draw(E);
 	window->draw(E2);
+
+
 
 	endDraw();
 }

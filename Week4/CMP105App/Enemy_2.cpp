@@ -10,7 +10,7 @@ Enemy_2::Enemy_2() {
 	Beach_Ball.loadFromFile("gfx/Beach_Ball.png");
 	setTexture(&Beach_Ball);
 
-	setVelocity(0.f, 2.f);
+	setVelocity(1.f, 2.f);
 
 }
 
@@ -48,6 +48,19 @@ void Enemy_2::update(float dt) {
 		setVelocity(0.f, 1.f); // go down
 		std::cout << "Moving Down \n";
 	}
+
+	// If hitting the right side of the window
+	if (getVelocity().x > 0 && getPosition().x + getSize().x > window->getSize().x) {
+		setVelocity(-1.f, getVelocity().y); // Reverse X direction (bounce left)
+		std::cout << "Moving Left \n";
+	}
+
+	// If hitting the left side of the window
+	if (getVelocity().x < 0 && getPosition().x < 0) {
+		setVelocity(1.f, getVelocity().y); // Reverse X direction (bounce right)
+		std::cout << "Moving Right \n";
+	}
+
 
 	move(velocity);
 }

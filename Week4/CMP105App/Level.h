@@ -10,7 +10,7 @@
 #include "Enemy.h"
 #include "Enemy_2.h"
 #include "Background.h"
-
+#include "Cursor.h"
 
 
 class Level : BaseLevel {
@@ -26,6 +26,9 @@ public:
 	Enemy E;
 	Enemy_2 E2;
 
+
+	//Cursor
+	Cursor C;
 
 	//Background
 
