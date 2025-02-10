@@ -12,8 +12,6 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 	testSprite.setSize(sf::Vector2f(100, 100));
 	testSprite.setPosition(100, 100);
 
-	P.setInput(in);
-
 }
 
 Level::~Level()
@@ -30,17 +28,12 @@ void Level::handleInput(float dt)
 		window->close();
 	}
 
-
-	P.handleInput(dt);
-
 }
 
 // Update game objects
 void Level::update(float dt)
 {
 	
-	P.update(dt);
-
 }
 
 // Render level
@@ -49,7 +42,6 @@ void Level::render()
 	beginDraw();
 
 	window->draw(testSprite);
-	window->draw(P);
 
 	endDraw();
 }
