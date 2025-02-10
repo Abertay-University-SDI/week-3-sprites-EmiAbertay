@@ -7,6 +7,7 @@
 #include <string.h>
 #include <iostream>
 
+#include "Player.h"
 
 class Level : BaseLevel {
 public:
@@ -16,6 +17,8 @@ public:
 	void handleInput(float dt) override;
 	void update(float dt) override;
 	void render() override;
+
+	Player P;
 
 private:
 	// Level objects
